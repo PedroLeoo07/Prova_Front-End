@@ -14,7 +14,7 @@ export default function Times() {
     times: [],
     loading: true,
     current: 1,
-    pageSize: 0,
+    pageSize: 5, 
   });
 
   const [modalInfo, setModalInfo] = useState({
@@ -27,16 +27,23 @@ export default function Times() {
   useEffect(() => {
     const fetchTimes = async () => {
       try {
+        console.log("Fetching times from API...");
         const { data: times } = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/times`,
           {
             headers: HEADERS,
           }
         );
-        setData({ times, loading: false, current: 1, pageSize: 5 });
-      } catch {
+        console.log("API response:", times);
+        setData((d) => ({
+          ...d,
+          times: times || [],
+          loading: false,
+        }));
+      } catch (error) {
+        console.error("Erro ao carregar times:", error.response || error.message);
         toast.error("Erro ao carregar times");
-        setData((d) => ({ ...d, loading: false }));
+        setData((d) => ({ ...d, loading: false, times: [] }));
       }
     };
 
@@ -61,8 +68,10 @@ export default function Times() {
   };
 
   const paginatedTimes = () => {
+    if (!data.times || data.times.length === 0) return [];
     const start = (data.current - 1) * data.pageSize;
-    return data.times.slice(start, start + data.pageSize);
+    const end = start + data.pageSize;
+    return data.times.slice(start, end); 
   };
 
   return (
