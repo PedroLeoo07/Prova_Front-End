@@ -10,5 +10,5 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 30px;
-  background-image: linear-gradient(to right, #ff0000, #000000);
+  background: linear-gradient(to right, #080808, #ff0000);
 }

@@ -33,5 +33,92 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
+}
+
+.button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e60000;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .imageContainer {
+        width: 200px;
+        height: 200px;
+        margin-right: 0;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .card {
+        width: 70rem;
+        padding: 0 50px;
+        margin: 120px auto;
+    }
+
+    .imageContainer {
+        width: 400px;
+        height: 400px;
+        margin-right: 50px;
+    }
+
+    .list {
+        gap: 30px;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 14px 28px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.4rem;
+    }
 }

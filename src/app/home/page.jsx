@@ -4,10 +4,14 @@ import styles from "./Home.module.css";
 import {Button, Card, Flex, Typography} from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (
-    <Card hoverable className={styles.card}>
+    <div>
+      <Header />
+       <Card hoverable className={styles.card}>
       <Flex justify="space-between">
         <div className={styles.imageContainer}>
           <Image src="/image/leonardo.jpeg" alt="Leonardo" fill className={styles.image} />
@@ -35,7 +39,7 @@ export default function Home() {
               <br />
             </p>
           </div>
-          <Link href="/jogador" prefetch>
+          <Link href="/time" prefetch>
             <Button type="primary" className={styles.button}>
               API via Axios
             </Button>
@@ -43,5 +47,8 @@ export default function Home() {
         </Flex>
       </Flex>
     </Card>
+    <Footer />
+    </div>
+   
   );
 }
