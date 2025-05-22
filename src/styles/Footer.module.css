@@ -1,0 +1,12 @@
+.footer {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.cont{
+    font-style: italic;
+    margin-top: 80px;
+}
